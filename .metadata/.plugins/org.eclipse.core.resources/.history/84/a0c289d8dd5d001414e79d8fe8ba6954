@@ -1,0 +1,23 @@
+package ArrayWithHashing;
+
+public class DriverArrayHashing {
+
+	public DriverArrayHashing() {
+		MyLinkedList [] ray = new MyLinkedList[3];
+		
+		MyLinkedList l1 = new MyLinkedList();
+		l1.addFront("marc");
+		l1.addFront("trish");
+		l1.addFront("lisa");
+		l1.addFront("junie");
+		l1.PrintValues();
+		
+		ray[0] = l1;
+	}
+
+	public static void main(String[] args) {
+		new DriverArrayHashing();
+
+	}
+
+}

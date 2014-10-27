@@ -1,0 +1,35 @@
+
+public class App {
+
+	public App() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public boolean closeEnough(double a, double b){
+		
+	}
+	
+	private static double mySquareRoot(double number){
+		
+		double lower = 0, upper = number;
+		while(!closeEnough(number, square)){
+			double guess = (lower + upper) / 2;
+			double square = guess*guess;
+			if(square < number)
+				lower = guess;
+			if(square > number)
+				upper = guess;
+			
+			
+		}
+		
+		
+		return 0.0;
+	}
+
+}

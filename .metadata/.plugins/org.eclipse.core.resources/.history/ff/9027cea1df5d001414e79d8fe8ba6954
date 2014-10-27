@@ -1,0 +1,31 @@
+package ArrayWithHashing;
+
+public class HashingDriver {
+	int size = 10;
+	MyLinkedList [] list = new MyLinkedList[size];
+	MyLinkedList l1 = new MyLinkedList();
+	
+	public HashingDriver() {
+		int index = computeHash("marc", size);
+		l1.addFront("marc");
+		list[index] = l1;
+		System.out.println(list[9].front.word);
+		
+	
+	}
+	
+	int computeHash(String s, int tableSize){
+		 
+		 int total = 0;
+		 for(int i= 0 ;i<s.length();i++){
+			 total = 31*total + s.charAt(i);
+		 }
+		 return total % tableSize;
+	 }
+
+	public static void main(String[] args) {
+		new HashingDriver();
+
+	}
+
+}

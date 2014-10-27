@@ -1,0 +1,11 @@
+package MyLinkedList;
+
+public class LinkedList {
+	
+	private Node node;
+	
+	public void addFront(int value){
+		Node node = new Node();
+	}
+
+}

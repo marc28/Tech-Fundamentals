@@ -1,0 +1,9 @@
+package MyLinkedList;
+
+public class Node {
+	int value;
+	Node next;
+	
+	
+
+}

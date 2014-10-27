@@ -1,0 +1,15 @@
+package MyLinkedList;
+
+public class Driver {
+
+	public Driver() {
+		LinkedList l = new LinkedList();
+		l.addFront(5);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

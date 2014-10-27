@@ -1,0 +1,19 @@
+package DoubleLinkedList;
+
+public class Driver {
+
+	public Driver() {
+		LinkedList l = new LinkedList();
+		Node front = new Node(5);
+		Node second = new Node(12);
+		l.insertAfter(6,front);
+		l.insertAfter(10, second);
+		System.out.println(l.sizeOfLinkedList(front));
+	}
+
+	public static void main(String[] args) {
+		new Driver();
+
+	}
+
+}

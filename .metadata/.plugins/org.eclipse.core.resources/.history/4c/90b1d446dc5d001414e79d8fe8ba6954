@@ -1,0 +1,6 @@
+package ArrayWithHashing;
+
+public class ArrayList {
+
+	Node front;
+}

@@ -1,0 +1,14 @@
+package MyLinkedList;
+
+public class LinkedList {
+	
+	private Node front;
+	
+	public void addFront(int value){
+		Node node = new Node(5);
+		node.value = value;
+		node.next = front; //this is null;
+		front = node;
+	}
+
+}

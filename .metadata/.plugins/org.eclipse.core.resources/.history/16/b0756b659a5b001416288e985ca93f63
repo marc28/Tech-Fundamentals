@@ -1,0 +1,7 @@
+package MyLinkedList;
+
+public class LinkedList {
+	
+	private Node node;
+
+}

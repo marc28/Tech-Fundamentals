@@ -1,0 +1,23 @@
+package MyLinkedList;
+
+public class Driver {
+
+	public Driver() {
+		LinkedList l = new LinkedList();
+		l.addFront(10);
+		l.addFront(11);
+		l.addFront(12);
+		
+	/*	System.out.println(l.sizeOfList());
+		Node removed = l.removeNode();
+		System.out.println(removed.value);
+		*/
+		Node atIndex = l.getAtIndex(0);
+		System.out.println(atIndex.value);
+	}
+
+	public static void main(String[] args) {
+		new Driver();
+	}
+
+}

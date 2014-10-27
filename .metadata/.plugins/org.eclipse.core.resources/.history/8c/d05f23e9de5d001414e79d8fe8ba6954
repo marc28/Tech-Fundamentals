@@ -1,0 +1,14 @@
+package ArrayWithHashing;
+
+public class HashingDriver {
+
+	public HashingDriver() {
+		MyLinkedList [] list = new MyLinkedList[10]; 
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

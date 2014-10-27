@@ -1,0 +1,21 @@
+package ArrayWithHashing;
+
+public class MyLinkedList {
+	
+	Node front;
+	
+	public void addFront(String value){
+		Node newNode = new Node();
+		newNode.word = value;
+		newNode.next = front;
+		front = newNode;
+	}
+	
+	public void PrintValues(){
+		Node temp = front;
+		while(temp.next != null){
+			System.out.println(temp.word);
+		}
+	}
+
+}

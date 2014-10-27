@@ -1,0 +1,16 @@
+package DoubleLinkedList;
+
+public class Driver {
+
+	public Driver() {
+		LinkedList l = new LinkedList();
+		Node front;
+		l.insertAfter(6,front);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

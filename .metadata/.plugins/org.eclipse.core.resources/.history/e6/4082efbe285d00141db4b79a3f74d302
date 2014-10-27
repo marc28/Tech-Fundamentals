@@ -1,0 +1,15 @@
+package DoubleLinkedList;
+
+public class LinkedList {
+
+	Node front;
+	
+	void insertAfter(int value, Node where){
+		
+	}
+	
+	
+	
+	
+
+}

@@ -1,0 +1,29 @@
+package DoubleLinkedList;
+
+public class LinkedList {
+
+	
+	void insertAfter(int value, Node where){
+		
+		Node newNode = new Node(4);
+		newNode.previous = where;
+		 
+		if(where.next !=null){
+			where.next.previous = newNode;
+		}
+		newNode.next = where.next;
+		where.next = newNode;
+		
+	}
+	
+	
+	int sizeOfLinkedList(Node Front){
+		Node temp = front;
+		int count = 1;
+		
+	}
+	
+	
+	
+
+}

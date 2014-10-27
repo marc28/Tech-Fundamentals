@@ -1,0 +1,15 @@
+package MyLinkedList;
+
+public class Driver {
+
+	public Driver() {
+		LinkedList l = new LinkedList();
+		l.addFront(5);
+		System.out.println(l.sizeOfList());
+	}
+
+	public static void main(String[] args) {
+		new Driver();
+	}
+
+}

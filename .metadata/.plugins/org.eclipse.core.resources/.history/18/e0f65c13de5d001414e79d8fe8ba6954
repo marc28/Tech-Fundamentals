@@ -1,0 +1,37 @@
+package ArrayWithHashing;
+
+public class DriverArrayHashing {
+
+	public DriverArrayHashing() {
+		MyLinkedList [] ray = new MyLinkedList[3];
+		
+		MyLinkedList l1 = new MyLinkedList();
+		l1.addFront("marc");
+		l1.addFront("trish");
+		l1.addFront("lisa");
+		l1.addFront("junie");
+		
+		MyLinkedList l2 = new MyLinkedList();
+		l2.addFront("cat");
+		l2.addFront("dog");
+		l2.addFront("sheep");
+		
+		MyLinkedList l3 = new MyLinkedList();
+		l3.addFront("cake");
+		l3.addFront("tea");
+		l3.addFront("coffee");
+		
+		ray[0] = l1;
+		ray[1] = l2;
+		ray[2] = l3;
+		ray[0].PrintValues();
+		ray[1].PrintValues();
+		ray[2].PrintValues();
+	}
+
+	public static void main(String[] args) {
+		new DriverArrayHashing();
+
+	}
+
+}

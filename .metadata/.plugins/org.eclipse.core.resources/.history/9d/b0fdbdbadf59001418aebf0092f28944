@@ -1,0 +1,102 @@
+package PartOne;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Random;
+import java.util.Scanner;
+
+public class TestOneSentence {
+	
+	//class variables
+	Scanner scan;
+	Random rand = new Random();
+	PrintWriter pw;
+
+	/**
+	 * Constructor
+	 */
+	public TestOneSentence() {
+		
+		try {
+			scan = new Scanner(new FileReader("a.txt"));
+			pw = new PrintWriter(new FileWriter("output.txt", true));
+			while(scan.hasNextLine()){ //reading in each sentence
+				String sentence = scan.nextLine(); //sentence now contains the whole line
+				String[] sentenceArray = sentence.split(" "); //the sentence is broken into an array
+				for (int i = 0; i < sentenceArray.length; i++) {
+					String[] word = sentenceArray[i].split("(?!^)");
+					randomiseWord(word, word.length);
+					for (int j = 0; j < word.length; j++) {
+						pw.append(word[j]); //writing/appending the scrambled word to the file
+					}
+					pw.append(" "); //Space between each word
+				}
+				pw.append("\n"); //New line
+			}
+			System.out.println("Success");
+			pw.close();	//close the print writer
+			scan.close(); //close the scanner
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/**
+	 * Method to randomise a word : Working
+	 */
+	void randomiseWord(String[] word, int n) {
+		if(word.length < 3)
+			return;
+		int start = findStart(word);
+		int end = findLast(word);
+	
+		for (int i = (start+1); i < end; i++) {
+			int num = rand.nextInt(end) + 2;
+			if(word[i].matches("[^a-zA-Z]") || word[end-(i-1)].matches("[^a-zA-Z]"))
+				continue;
+			swap(word, i, num);
+		}
+
+	}
+
+	/**
+	 * Swap method : Working
+	 */
+	private void swap(String[] a, int i, int num) {
+		if(a[i].matches("[^a-zA-Z]") || a[num].matches("[^a-zA-Z]"))
+			return;
+		String temp = a[i];
+		a[i] = a[num];
+		a[num] = temp;
+
+	}
+
+	public static void main(String[] args) {
+		new TestOneSentence();
+
+	}
+	
+	 int findStart(String [] word){
+		for(int i = 0;i<word.length;i++){
+			if(word[i].matches("[a-zA-Z]"))
+				return i;
+		}
+		return 0;
+	}
+	 
+	 int findLast(String []word){
+		 for(int i = word.length-1;i>=0;i--){
+				if(word[i].matches("[a-zA-Z]"))
+					return i;
+			}
+			return 0;
+	 }
+
+}

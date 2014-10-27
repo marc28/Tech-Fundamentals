@@ -1,0 +1,46 @@
+import java.util.Arrays;
+
+
+public class HashFunction {
+	String [] theArray;
+	int arraySize; //arraysize will be monitored
+	int itemsInArray = 0; //will be updated as things are entered into the array.
+	
+
+	public static void main(String[] args) {
+		HashFunction thefunc = new HashFunction(30);
+		String [] elementsToAdd = {"1","5","17","21","26"}; //no duplicates
+		thefunc.hashFunction1(elementsToAdd, thefunc.theArray);
+		thefunc.display();
+	}
+	
+	public HashFunction(int size){
+		arraySize = size;
+		theArray = new String[size];
+		Arrays.fill(theArray, "-1"); //filling the array with -1 to show they are empty
+	}
+	
+	
+	//Here is a bad hash function: put values in the same index that match their value:
+	//eg value 1 will be stored in index 1;
+	public void hashFunction1(String [] stringsForArray, String[] theArray){
+		for(int i = 0;i <stringsForArray.length;i++){
+			String newElement = stringsForArray[i];
+			theArray[Integer.parseInt(newElement)] = newElement;
+		}
+	}
+	
+	
+	private void display(){
+		for(int i = 0;i<arraySize;i++){
+			System.out.format(" %3s ",i);
+		}
+		System.out.println();
+		for(int i = 0;i<arraySize;i++){
+			if(theArray[i].equals("-1"));
+			System.out.format(" %3s ",theArray[i]);
+		}
+	}
+	
+
+}

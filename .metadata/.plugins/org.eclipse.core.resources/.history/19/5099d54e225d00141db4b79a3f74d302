@@ -1,0 +1,26 @@
+package MyLinkedList;
+
+public class LinkedList {
+	
+	private Node front;
+	
+	public void addFront(int value){
+		Node node = new Node(value);
+		node.value = value;
+		node.next = front; //this is null;
+		front = node;
+	}
+	
+	public int sizeOfList(){
+		int count = 0;
+		
+		Node start = front;
+		while(start.next != null){
+			count++;
+			start.next = front.next;
+		}
+		
+		return count;
+	}
+
+}

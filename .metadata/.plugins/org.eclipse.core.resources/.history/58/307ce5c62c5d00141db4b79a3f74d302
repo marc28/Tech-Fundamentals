@@ -1,0 +1,23 @@
+package DoubleLinkedList;
+
+public class Driver {
+
+	public Driver() {
+		LinkedList l = new LinkedList();
+		Node front = new Node(0);
+		l.insertAfterTheFront(3,front);
+		l.insertAfterTheFront(2,front);
+		l.insertAfterTheFront(1,front);
+		System.out.println("Size: " + l.sizeOfLinkedList(front));
+		System.out.println(front.next.value);
+		Node removed = l.removeFromFront(front);
+		System.out.println(removed.value);
+		System.out.println("Size: " + l.sizeOfLinkedList(front));
+	}
+
+	public static void main(String[] args) {
+		new Driver();
+
+	}
+
+}
