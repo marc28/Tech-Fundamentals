@@ -1,0 +1,50 @@
+package ArrayWithHashing;
+
+import java.util.Scanner;
+
+public class HashingDriver {
+	// variables
+	Scanner scan = new Scanner(System.in);
+	int size = 10;
+	MyLinkedList[] list = new MyLinkedList[size]; //An array of linked lists
+	String name = "";
+
+	public HashingDriver() {
+		for (int i = 0; i < 10; i++) {
+			System.out.println("Enter a name");
+			name = scan.next();
+
+			int index = computeHash(name, size);
+			//System.out.println("Index: " + index + " for letter: " + name);
+
+			if (list[index] == null) // check to see if the index is null
+				list[index] = new MyLinkedList(); //if it is null create a new Linked List
+			list[index].addFront(name); //add the names in according!!
+		}
+
+		for (int i = 0; i < size; i++) {
+			if (list[i] != null) {
+				System.out.print("Index " + i + ": ");
+				list[i].printValues(); //print values is a method I wrote
+			}
+		}
+		
+		
+
+	}
+
+	int computeHash(String s, int tableSize) {
+
+		int total = 0;
+		for (int i = 0; i < s.length(); i++) {
+			total = 31 * total + s.charAt(i);
+		}
+		return total % tableSize;
+	}
+
+	public static void main(String[] args) {
+		new HashingDriver();
+
+	}
+
+} //end of class
